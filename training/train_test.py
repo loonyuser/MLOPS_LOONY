@@ -23,7 +23,7 @@ def test_split_data():
 
     # verify that data was split as desired
     assert data["train"]["X"].shape == (4, 2)
-    assert data["train"]["X"].shape == (1, 2)
+    assert data["test"]["X"].shape == (1, 2)
 
 
 def test_train_model():
