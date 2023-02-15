@@ -7,7 +7,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.ensemble import RandomForestClassifier
 
-# Splitting the dataframe into test and train data
+# Split the dataframe into test and train data
 
 def split_data(data_df):
     """Split a dataframe into training and validation datasets"""
