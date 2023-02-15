@@ -12,7 +12,7 @@ def init():
     # AZUREML_MODEL_DIR is an environment variable created during deployment.
     # It is the path to the model folder (./azureml-models/$MODEL_NAME/$VERSION)
     # For multiple models, it points to the folder containing all deployed models (./azureml-models)
-    model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'insurance_claim_prediction_model.pkl')
+    model_path = os.path.join(os.getenv("AZUREML_MODEL_DIR"), "insurance_claim_prediction_model.pkl")
     # Deserialize the model file back into a sklearn model.
     model = joblib.load(model_path)
 
@@ -23,7 +23,7 @@ output_sample = np.array([1])
 @output_schema(NumpyParameterType(output_sample))
 def run(data):
     try:
-        data_df = pd.DataFrame(data, columns = ['age', 'sex', 'bmi', 'children', 'smoker', 'region', 'charges'])
+        data_df = pd.DataFrame(data, columns = ["age", "sex", "bmi", "children", "smoker", "region", "charges"])
         result = model.predict(data_df)
         # You can return any JSON-serializable object.
         return result.tolist()
